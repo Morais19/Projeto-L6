@@ -2,6 +2,7 @@
     html{
         scroll-behavior: smooth;
     }
+
     * {
         margin: 0;
         padding: 0;
@@ -17,6 +18,7 @@
         overflow-x: hidden;
         
     }
+
     /*Estilização do HEADER*/
     .header {
         position: fixed;
@@ -389,10 +391,18 @@
         box-sizing: border-box;
     }
 
+    .contato h1 {
+        text-align: center;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 5.0;
+        color: #2B3336;
+    }
+
     .container {
         position: relative;
         width: 100%;
-        min-height: 100vh;
+        min-height: 50vh;
         padding: 2rem;
         background-color: #EDE8D0;
         overflow: hidden;
@@ -578,6 +588,62 @@
         opacity: 1;
     }
 
+    .info-contato {
+        padding: 2.3rem 2.2rem;
+        position: relative;
+    }
+
+    .info-contato .title {
+        color: #1C8D8E;
+    }
+
+    .text {
+        color: #2B3336;
+        margin: 1.5rem 0 2rem 0;
+    }
+
+    .informacoes {
+        display: flex;
+        color: #2B3336;
+        margin: 0.7rem 0;
+        align-items: center;
+        font-size: 0.95rem;
+    }
+
+    .icon {
+        width: 28px;
+        margin-right: 0.7rem;
+    }
+
+    .sociais {
+        padding: 0.7rem;
+    }
+
+    .sociais p {
+        color: #2B3336;
+    }
+
+    .md-sociais {
+        display: flex;
+        margin-top: 0.5rem;
+    }
+
+    .md-sociais a {
+        width: 35px;
+        height: 35px;
+        border-radius: 5px;
+        background: linear-gradient(45deg, #1abc9c,#1C8D8E);
+        color: #fff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 0.5rem;
+        transition: 0.3s;
+    }
+
+    .md-sociais a:hover {
+        transform: scale(1.05);
+    }
+    
 
 
 
