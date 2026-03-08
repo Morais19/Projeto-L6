@@ -319,6 +319,13 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 10%;
+        flex-wrap: wrap;
+    }
+
+    .sobre_logo img {
+        width: 100px;
+        height: auto;
+        margin-left: 140px;
     }
 
     /*Estilizações CARDS*/
