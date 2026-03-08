@@ -40,12 +40,6 @@
         gap: 1px;
     }
 
-    .logosob img{
-        width: 300px;
-        height: auto;
-        margin-left: 140px;
-    }
-
     .logo img {
         height: 100px; 
         width: auto;
@@ -53,15 +47,7 @@
         transition: transform 0.3s ease;
     }
 
-
-    .sobre_logotext{
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        margin-bottom: 40px;
-    }
-
-   .logo img:hover {
+    .logo img:hover {
         transform: scale(1.05);
     }
 
@@ -333,7 +319,6 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 10%;
-        flex-wrap: wrap; 
     }
 
     /*Estilizações CARDS*/
@@ -644,9 +629,6 @@
         transform: scale(1.05);
     }
     
-
-
-
     /*Transições*/
     @keyframes float {
         0%{
