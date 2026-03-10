@@ -404,6 +404,9 @@
         box-sizing: border-box;
         padding-top: 120px;
     }
+    .textocontato{
+        text-align: justify;
+    }
 
     .contato h1 {
         text-align: center;
