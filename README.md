@@ -17,7 +17,7 @@ A proposta é oferecer uma navegação simples, moderna e responsiva, garantindo
 
 ---
 
-🧭 Navegação do Site
+## 🧭 Navegação do Site
 
 A estrutura de navegação segue o padrão:
 
