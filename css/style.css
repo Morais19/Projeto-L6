@@ -170,7 +170,7 @@ img {
     max-width: 600px;
     position: relative;
 }
-
+/*  
 .home_conteudo h1 {
     position: relative;
     font-size: clamp(32px, 5vw, 60px);
@@ -188,16 +188,17 @@ img {
     animation: showRight 1s ease forwards;
     animation-delay: 1s;
 }
+*/
 
-.home_conteudo h3 {
+.home_conteudo h1 {
     position: relative;
     font-size: clamp(18px, 2.8vw, 35px);
     font-weight: 700;
-    color: var(--color-teal);
+    color: var(--color-dark);
     margin-top: clamp(8px, 1.5vw, 16px);
 }
 
-.home_conteudo h3::before {
+.home_conteudo h1::before {
     content: '';
     position: absolute;
     top: 0; right: 0;
@@ -211,7 +212,7 @@ img {
     position: relative;
     font-size: clamp(15px, 2vw, 25px);
     margin: clamp(12px, 2vw, 20px) 0 clamp(20px, 3vw, 40px);
-    color: var(--color-dark);
+    color: var(--color-teal);
 }
 
 .home_conteudo p::before {
@@ -483,101 +484,137 @@ img {
     scroll-margin-top: var(--header-h);
 }
 
+.projetos {
+    background-color: var(--color-bg);
+    padding: clamp(56px, 8vw, 96px) var(--section-px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-margin-top: var(--header-h);
+}
+
 .projetos-header {
     width: 100%;
     text-align: center;
     margin-bottom: clamp(32px, 5vw, 56px);
 }
 
-.projetos__filters span {
-  position: relative;
-  display: inline-block;
-  padding: 5px 10px;
-  cursor: pointer;
-  color: black;
-  z-index: 1;
+.projetos_filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
 }
 
-.projetos__filters span::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 100%;
-  background-color: #1C8D8E;
-  z-index: -1;
-  transition: 0.3s ease;
-  border-radius: 5px;
+.projetos_item {
+    cursor: pointer;
+    color: var(--color-teal);
+    padding: .35rem .9rem;
+    border-radius: .5rem;
+    font-size: clamp(13px, 1.3vw, 15px);
+    font-weight: 600;
+    transition: background-color .3s, color .3s;
 }
 
-.projetos__filters span:hover::after {
-  width: 100%;
+.projetos_item:hover {
+    background-color: var(--color-teal);
+    color: var(--color-white);
 }
 
-.projetos__filters span:hover {
-  color: white;
+.projetos_item.active-work {
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    border-radius: 5px;
 }
 
-.active-work {
-  background-color: var(--first-color);
-  color: var(--color-dark);
-}
-
+/* Grid de cards */
 .projetos__container {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
+/* Card individual */
 .projetos__content {
-  position: relative;
-  background-color: var(--color-white);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 25px rgba(14, 36, 49, .15);
-  transition: .3s;
-  overflow: hidden;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(14, 36, 49, .10);
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .projetos__content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 35px rgba(14, 36, 49, .2);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 36px rgba(14, 36, 49, .18);
 }
 
+/* Imagem */
 .projetos__img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: .5rem;
-  margin-bottom: var(--mb-1);
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    margin-bottom: 0;
 }
 
+/* Área de dados abaixo da imagem */
 .projetos__data {
-  padding: 0 1rem 1rem;
+    padding: 1rem 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    flex: 1;
 }
 
 .projetos__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
+    font-size: clamp(14px, 1.4vw, 16px);
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0;
 }
 
 .projetos__description {
-  margin-bottom: var(--mb-1);
-  line-height: 1.6;
+    font-size: clamp(12px, 1.2vw, 13px);
+    color: var(--color-dark);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
 }
 
+/* Botão "Ver Detalhes" */
 .projetos__button {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  color: var(--color-teal);
-  font-weight: var(--font-medium);
-  text-decoration: none;
-  transition: .3s;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .6rem;
+    padding: .55rem 1.1rem;
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    border-radius: 6px;
+    font-size: clamp(12px, 1.2vw, 13px);
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color .3s, transform .2s;
+}
+
+.projetos__button:hover {
+    background-color: #157a7b;
+    transform: translateX(3px);
+}
+
+.button__icon {
+    font-size: .85rem;
+    transition: transform .3s;
 }
 
 .projetos__button:hover .button__icon {
-  transform: translateX(.25rem);
+    transform: translateX(.3rem);
 }
 
 /* ── CONTATO ─────────────────────────────────────────────────────────────── */
@@ -812,6 +849,7 @@ textarea.input {
     .formulario { grid-template-columns: 1fr; max-width: 480px; }
     .form-contato::before { display: none; }
     .logo_home img { width: clamp(160px, 35vw, 380px); }
+    .projetos__container { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ══ MOBILE < 768px ═════════════════════════════════════════════════════════ */
@@ -883,6 +921,11 @@ textarea.input {
     .formulario { grid-template-columns: 1fr; max-width: 100%; border-radius: 0; }
     .form-contato::before { display: none; }
     .input, .btn { width: 100%; }
+    
+}
+
+@media (max-width: 600px) {
+    .projetos__container { grid-template-columns: 1fr; }
 }
 
 /* ══ MOBILE PEQUENO < 480px ═════════════════════════════════════════════════ */
@@ -894,3 +937,4 @@ textarea.input {
 
 table { border-collapse: collapse; width: 100%; }
 .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
