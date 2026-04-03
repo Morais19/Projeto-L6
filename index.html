@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+ 
     <!-- ══ HEADER ══════════════════════════════════════════════════════════ -->
     <header class="header">
         <div class="logo">
             <img src="assets/images/Logo.png" alt="Logo L6 Engenharia">
             <a href="#home" class="logo_text">L6 Engenharia</a>
         </div>
-
+ 
         <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
             <span class="hamburger-bar"></span>
             <span class="hamburger-bar"></span>
@@ -30,9 +30,9 @@
             <a href="#contato"  class="nav-link">Contato</a>
         </nav>
     </header>
-
+ 
     <div class="nav-overlay" id="nav-overlay"></div>
-
+ 
     <main>
         <!-- ══ HOME ════════════════════════════════════════════════════════ -->
         <section id="home" class="home">
@@ -40,12 +40,12 @@
                 
                 <h1>Há mais de 6 anos transformando ideias em realidade através de soluções inovadoras</h1>
                 <b><p>Especialistas em projetos residenciais, comerciais e industriais.</p></b>
-
+ 
                 <div class="btn-box">
                     <a href="#">Ver Projetos</a>
                     <a href="#contato">Fale Conosco</a>
                 </div>
-
+ 
                 <div class="home-sociais">
                     <a href="" target="_blank" aria-label="LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
@@ -58,21 +58,21 @@
                     </a>
                 </div>
             </div>
-
+ 
             <div class="logo_home">
                 <img src="assets/images/Logo.png" alt="Logo L6 Engenharia">
             </div>
         </section>
-
+ 
         <!-- ══ SOBRE ═══════════════════════════════════════════════════════ -->
         <section id="sobre" class="sobre">
-
+ 
             <div class="sobre-header">
                 <span class="section-label">Quem Somos?</span>
                 <h2 class="section-titulo">Sobre a L6 Engenharia</h2>
                 <div class="section-rule"></div>
             </div>
-
+ 
             <div class="sobre_logotext">
                 <div class="logosob">
                     <img src="assets/images/Logo.png" alt="Logo L6">
@@ -89,7 +89,7 @@
                     </p>
                 </div>
             </div>
-
+ 
             <div class="cards-grid">
                 <div class="card_sobre">
                     <div class="card-icon">
@@ -98,7 +98,7 @@
                     <h3>Missão</h3>
                     <p><b>Oferecer soluções inovadoras em engenharia civil, superando expectativas e construindo um futuro sustentável.</b></p>
                 </div>
-
+ 
                 <div class="card_sobre">
                     <div class="card-icon">
                         <img src="assets/icons/olho.png" alt="Visão">
@@ -106,7 +106,7 @@
                     <h3>Visão</h3>
                     <p><b>Ser reconhecida como a principal empresa de engenharia civil da região, referência em qualidade e inovação.</b></p>
                 </div>
-
+ 
                 <div class="card_sobre">
                     <div class="card-icon">
                         <img src="assets/icons/coracao.png" alt="Valores">
@@ -116,10 +116,10 @@
                 </div>
             </div>
         </section>
-
+ 
         <!-- ══ PROJETOS ═════════════════════════════════════════════════════ -->
         <section class="projetos" id="projetos">
-
+ 
             <div class="projetos-header">
                 <span class="section-label">Projetos Executados</span>
                 <h2 class="section-titulo">Nosso Portfólio</h2>
@@ -133,9 +133,12 @@
                 <span class="projetos_item" data-filter=".industrial"><b>Industrial</b></span>
                 <span class="projetos_item" data-filter=".infraestrutura"><b>Infraestrutura</b></span>
             </div>
-
+ 
             <div class="projetos__container">
-                <div class="projetos__content mix residencial">
+                <div class="projetos__content mix residencial"
+                     data-area="450m²"
+                     data-duration="8 meses"
+                     data-client="Família Silva">
                     <img src="assets/images/residencia-moderna.jpg" alt="Casa Moderna" class="projetos__img">
                     <div class="projetos__data">
                         <h3 class="projetos__title">Residência Moderna</h3>
@@ -146,8 +149,11 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="projetos__content mix comercial">
+ 
+                <div class="projetos__content mix comercial"
+                     data-area="15.000m²"
+                     data-duration="24 meses"
+                     data-client="Grupo Empresarial ABC">
                     <img src="assets/images/edificio-comercial.jpg" alt="Edifício Comercial" class="projetos__img">
                     <div class="projetos__data">
                         <h3 class="projetos__title">Centro Empresarial</h3>
@@ -158,8 +164,11 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="projetos__content mix industrial">
+ 
+                <div class="projetos__content mix industrial"
+                     data-area="5.000m²"
+                     data-duration="12 meses"
+                     data-client="Indústria XYZ">
                     <img src="assets/images/galpao-industrial.jpg" alt="Galpão Industrial" class="projetos__img">
                     <div class="projetos__data">
                         <h3 class="projetos__title">Complexo Industrial</h3>
@@ -170,8 +179,11 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="projetos__content mix residencial">
+ 
+                <div class="projetos__content mix residencial"
+                     data-area="12.000m²"
+                     data-duration="18 meses"
+                     data-client="Construtora DEF">
                     <img src="assets/images/condominio.jpg" alt="Condomínio" class="projetos__img">
                     <div class="projetos__data">
                         <h3 class="projetos__title">Condomínio Residencial</h3>
@@ -182,8 +194,11 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="projetos__content mix infraestrutura">
+ 
+                <div class="projetos__content mix infraestrutura"
+                     data-area="200m"
+                     data-duration="6 meses"
+                     data-client="Prefeitura Municipal">
                     <img src="assets/images/ponte-rodoviaria.jpg" alt="Ponte" class="projetos__img">
                     <div class="projetos__data">
                         <h3 class="projetos__title">Ponte Rodoviária</h3>
@@ -194,8 +209,11 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="projetos__content mix comercial">
+ 
+                <div class="projetos__content mix comercial"
+                     data-area="25.000m²"
+                     data-duration="20 meses"
+                     data-client="Shopping Center GHI">
                     <img src="assets/images/shopping.jpg" alt="Shopping Center" class="projetos__img">
                     <div class="projetos__data">
                         <h3 class="projetos__title">Shopping Center</h3>
@@ -208,19 +226,19 @@
                 </div>
             </div>
         </section>
-
+ 
         <!-- ══ CONTATO ═════════════════════════════════════════════════════ -->
         <section id="contato" class="contato">
-
+ 
             <div class="contato-header">
                 <span class="section-label">Entre em Contato</span>
                 <h2 class="section-titulo">Fale Conosco</h2>
                 <div class="section-rule"></div>
             </div>
-
+ 
             <div class="container-contato">
                 <div class="formulario">
-
+ 
                     <div class="info-contato">
                         <h3 class="title">Vamos entrar em contato!</h3>
                         <p class="textocontato">
@@ -228,7 +246,7 @@
                             Nossa equipe está pronta para atender suas necessidades com profissionalismo e agilidade.
                             Seja para tirar dúvidas, solicitar orçamentos ou conhecer melhor nossos serviços, estamos à disposição.
                         </p>
-
+ 
                         <div class="info">
                             <div class="informacoes">
                                 <img src="assets/icons/location.png" class="icon" alt="Endereço">
@@ -243,7 +261,7 @@
                                 <p><b>(61) 9 9803-2220</b></p>
                             </div>
                         </div>
-
+ 
                         <div class="sociais">
                             <p><b>Nossa Redes Sociais:</b></p>
                             <div class="md-sociais">
@@ -259,11 +277,11 @@
                             </div>
                         </div>
                     </div>
-
+ 
                     <div class="form-contato">
                         <span class="circle one"></span>
                         <span class="circle two"></span>
-
+ 
                         <form action="https://formsubmit.co/thefatolilgang@gmail.com" method="POST">
                             <h3 class="titulo">Entre em Contato</h3>
                             <div class="input-container">
@@ -289,12 +307,14 @@
                             <input type="submit" value="Enviar" class="btn" />
                         </form>
                     </div>
-
+ 
                 </div>
             </div>
         </section>
     </main>
 
+    <script src="js/mixitup.min.js"></script>
     <script src="js/script.js"></script>
+    
 </body>
 </html>
