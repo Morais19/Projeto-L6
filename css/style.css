@@ -542,7 +542,7 @@ img {
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(14, 36, 49, .10);
     overflow: hidden;
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: transform .3s ease, box-shadow .3s ease, opacity .3s ease;
     display: flex;
     flex-direction: column;
 }

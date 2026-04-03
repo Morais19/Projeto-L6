@@ -62,14 +62,36 @@ navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 window.addEventListener("resize", () => { if (window.innerWidth >= 768) closeMenu(); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
-/* ── 4. Projetos: filtragem MixItUp ─────────────────────────────────────── */
+/* ── 4. Projetos: filtragem por categorias ───────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
-    if (typeof mixitup !== 'undefined') {
-        mixitup('.projetos__container', {
-            selectors: { target: '.projetos__content' },
-            animation: { duration: 300 }
+    const filterButtons = document.querySelectorAll('.projetos_item');
+    const projects = document.querySelectorAll('.projetos__content');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            projects.forEach(project => {
+                // Se o filtro for 'all', mostra todos. 
+                // Caso contrário, verifica se o projeto contém a classe correspondente ao filtro (removendo o ponto inicial do seletor)
+                const filterClass = filter.replace('.', '');
+                
+                if (filter === 'all' || project.classList.contains(filterClass)) {
+                    project.style.display = 'flex'; // Mantendo o display flex original do CSS
+                    setTimeout(() => {
+                        project.style.opacity = '1';
+                        project.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    project.style.opacity = '0';
+                    project.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        project.style.display = 'none';
+                    }, 300);
+                }
+            });
         });
-    }
+    });
  
     /* ── 5. Projetos: botão active-work ─────────────────────────────────── */
     const filterItems = document.querySelectorAll('.projetos_item');
