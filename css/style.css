@@ -40,9 +40,52 @@ img {
 }
 
 /* ── HEADER ─────────────────────────────────────────────────────────────── */
+
+.pre-header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: var(--color-teal);
+    color: white;
+    font-size: 0.85rem;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    z-index: 300;
+}
+
+.pre-header_cont {
+  width: 100%;
+  padding: 0 var(--section-px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre-header_esq {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.pre-header_dir a {
+  margin-left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.pre-header_dir a:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
 .header {
     position: fixed;
-    top: 0; left: 0;
+    top: 40px;
     width: 100%;
     padding: 0 var(--section-px);
     background: var(--color-white);
@@ -156,7 +199,7 @@ img {
 /* ── HOME ────────────────────────────────────────────────────────────────── */
 .home {
     min-height: 100vh;
-    padding-top: var(--header-h);
+    padding-top: calc(var(--header-h) + 40px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -377,7 +420,7 @@ img {
 }
 
 /* ── SOBRE ───────────────────────────────────────────────────────────────── */
-#sobre { scroll-margin-top: var(--header-h);}
+#sobre { scroll-margin-top: calc(var(--header-h) + 40px);}
 
 .sobre {
     background-color: var(--color-white);
@@ -385,7 +428,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-margin-top: var(--header-h);
+    scroll-margin-top: calc(var(--header-h) + 40px);
 }
 
 .sobre-header {
@@ -481,7 +524,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-margin-top: var(--header-h);
+    scroll-margin-top: calc(var(--header-h) + 40px);
 }
 
 .servicos-header {
@@ -489,6 +532,83 @@ img {
     text-align: center;
     margin-bottom: clamp(32px, 5vw, 56px);
 }
+
+.servicos-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 40px;
+}
+
+.txt-servicosesq,
+.txt-servicosdir {
+    flex:1;
+}
+
+.txt-servicosesq p,
+.txt-servicosdir p {
+    position: relative;
+    font-size: 25px;
+    margin: 28px 0;
+}
+
+/* ESQUERDA */
+.txt-servicosesq p {
+    padding-left: 40px;
+}
+
+.txt-servicosesq p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px;
+    height: 30px;
+
+    background-image: url("../assets/images/Logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* DIREITA */
+.txt-servicosdir p {
+    padding-right: 40px;
+    text-align: right;
+}
+
+.txt-servicosdir p::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 40px;
+    height: 30px;
+
+    background-image: url("../assets/images/Logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logoserv {
+    flex: 0 0 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoserv img { 
+    width: 100%;
+    max-width: 220px;
+    opacity: 0.9;
+ }
+
 
 /* ── PROJETOS ───────────────────────────────────────────────────────────── */ 
 
@@ -498,7 +618,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-margin-top: var(--header-h);
+    scroll-margin-top: calc(var(--header-h) + 40px);
 }
 
 .projetos-header {
@@ -627,7 +747,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    scroll-margin-top: var(--header-h);
+    scroll-margin-top: calc(var(--header-h) + 40px);
 }
 
 .contato-header {
@@ -802,6 +922,15 @@ textarea.input {
     margin: .7rem 0;
     align-items: center;
     font-size: clamp(.8rem, 1.2vw, .95rem);
+}
+
+.informacoes a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.informacoes a:hover {
+  text-decoration: underline;
 }
 
 .icon { width: clamp(22px, 3vw, 28px); margin-right: .7rem; flex-shrink: 0; }
