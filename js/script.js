@@ -14,7 +14,7 @@ const cards = document.querySelectorAll(".card_sobre");
 
 const revealObserver = new IntersectionObserver(
     (entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry, i) => { 
             if (entry.isIntersecting) {
                 setTimeout(() => {
                     entry.target.style.opacity   = "1";
