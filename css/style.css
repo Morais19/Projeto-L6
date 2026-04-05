@@ -473,9 +473,9 @@ img {
     font-weight: 500;
 }
 
-/* ── PROJETOS ───────────────────────────────────────────────────────────── */ 
+/* ── SERVIÇOS ───────────────────────────────────────────────────────────── */ 
 
-.projetos {
+.servicos {
     background-color: var(--color-bg);
     padding: clamp(56px, 8vw, 96px) var(--section-px);
     display: flex;
@@ -484,8 +484,16 @@ img {
     scroll-margin-top: var(--header-h);
 }
 
+.servicos-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+/* ── PROJETOS ───────────────────────────────────────────────────────────── */ 
+
 .projetos {
-    background-color: var(--color-bg);
+    background-color: var(--color-white);
     padding: clamp(56px, 8vw, 96px) var(--section-px);
     display: flex;
     flex-direction: column;
@@ -528,7 +536,6 @@ img {
     border-radius: 5px;
 }
 
-/* Grid de cards */
 .projetos__container {
     width: 100%;
     display: grid;
@@ -536,9 +543,8 @@ img {
     gap: 1.5rem;
 }
 
-/* Card individual */
 .projetos__content {
-    background-color: var(--color-white);
+    background-color: var(--color-whitesmoke);
     border-radius: 1rem;
     box-shadow: 0 4px 20px rgba(14, 36, 49, .10);
     overflow: hidden;
@@ -552,7 +558,6 @@ img {
     box-shadow: 0 12px 36px rgba(14, 36, 49, .18);
 }
 
-/* Imagem */
 .projetos__img {
     width: 100%;
     height: 180px;
@@ -562,7 +567,6 @@ img {
     margin-bottom: 0;
 }
 
-/* Área de dados abaixo da imagem */
 .projetos__data {
     padding: 1rem 1rem 1.2rem;
     display: flex;
@@ -586,7 +590,6 @@ img {
     flex: 1;
 }
 
-/* Botão "Ver Detalhes" */
 .projetos__button {
     display: inline-flex;
     align-items: center;
@@ -619,7 +622,7 @@ img {
 
 /* ── CONTATO ─────────────────────────────────────────────────────────────── */
 .contato {
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
     padding: clamp(56px, 8vw, 96px) var(--section-px);
     display: flex;
     flex-direction: column;
@@ -826,7 +829,19 @@ textarea.input {
     font-size: 1.1rem;
 }
 
-.md-sociais a:hover { transform: scale(1.05); }
+.md-sociais a:hover { transform: scale(1.05);}
+
+footer {
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--color-teal)
+}
 
 /* ── Keyframes ───────────────────────────────────────────────────────────── */
 @keyframes float {
