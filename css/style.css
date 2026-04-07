@@ -5,7 +5,7 @@
     --header-h:    80px;
     --pre-header-h: 40px;
     --total-header: calc(var(--header-h) + var(--pre-header-h));
-    --color-bg:    #EDE8D0;
+    --color-bg:    #c9cbce;
     --color-white: rgb(255, 254, 254);
     --color-teal:  #1C8D8E;
     --color-dark:  #2B3336;
