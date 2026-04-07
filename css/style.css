@@ -5,7 +5,7 @@
     --header-h:    80px;
     --pre-header-h: 40px;
     --total-header: calc(var(--header-h) + var(--pre-header-h));
-    --color-bg:    #c9cbce;
+    --color-bg:    #DEE0E3;
     --color-white: rgb(255, 254, 254);
     --color-teal:  #1C8D8E;
     --color-dark:  #2B3336;
@@ -762,7 +762,7 @@ img {
 .container-contato {
     width: 100%;
     padding: clamp(12px, 2vw, 2rem);
-    background-color: var(--color-smoke);
+    background-color: var(--color-bg);
     overflow: hidden;
     display: flex;
     align-items: center;
