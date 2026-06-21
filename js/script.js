@@ -229,30 +229,31 @@ function openProjectModal(project) {
             document.removeEventListener('keydown', escHandler);
         }
     });
+}
 
-    const yearEl = document.getElementById('footer-year');
+/* ── 7. Rodapé: ano automático no copyright ──────────────────────────────── */
+const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
- 
- 
-/* ── Footer: animação de entrada via IntersectionObserver ────────────────
+
+/* ── 8. Footer: animação de entrada via IntersectionObserver ──────────────
    Cada coluna desliza suavemente para cima ao entrar na viewport.
    ─────────────────────────────────────────────────────────────────────── */
 (function initFooterReveal() {
     const cols = document.querySelectorAll('.footer__col');
- 
+
     if (!cols.length) return;
- 
+
     cols.forEach((col) => {
         col.style.opacity   = '0';
         col.style.transform = 'translateY(28px)';
         col.style.transition = 'opacity .55s ease, transform .55s ease';
     });
- 
+
     const footerObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
- 
+
                 const cols = entry.target.querySelectorAll('.footer__col');
                 cols.forEach((col, i) => {
                     setTimeout(() => {
@@ -260,14 +261,34 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
                         col.style.transform = 'translateY(0)';
                     }, i * 100);
                 });
- 
+
                 footerObserver.unobserve(entry.target);
             });
         },
         { threshold: 0.08 }
     );
- 
+
     const footerGrid = document.querySelector('.footer__grid');
     if (footerGrid) footerObserver.observe(footerGrid);
 })();
-}
+
+/* ── 9. Botão "Voltar ao topo" ────────────────────────────────────────────── */
+(function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    function toggleVisibility() {
+        if (window.scrollY > window.innerHeight * 0.6) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    }
+
+    toggleVisibility();
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();

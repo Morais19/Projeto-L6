@@ -5,11 +5,12 @@
     --header-h:    80px;
     --pre-header-h: 40px;
     --total-header: calc(var(--header-h) + var(--pre-header-h));
-    --color-bg:    #DEE0E3;
-    --color-white: rgb(255, 254, 254);
-    --color-teal:  #1C8D8E;
-    --color-dark:  #2B3336;
-    --color-smoke: whitesmoke;
+    --color-bg:        #F0F4F4;
+    --color-white:     rgb(255, 254, 254);
+    --color-teal:      #16B8AC;
+    --color-teal-light:#2DD4C5;
+    --color-dark:      #0B2A40;
+    --color-smoke:     #F7F9F9;
     --section-px:  clamp(1rem, 6vw, 10%);
 }
  
@@ -486,7 +487,7 @@ img {
  
 .card_sobre {
     background-color: var(--color-smoke);
-    border: 1px solid rgba(28, 141, 142, .12);
+    border: 1px solid rgba(22, 184, 172, .12);
     padding: clamp(20px, 3vw, 40px) clamp(16px, 2.5vw, 32px);
     border-radius: 20px;
     text-align: center;
@@ -1433,3 +1434,48 @@ textarea.input {
 /* ══ UTILITÁRIOS ═════════════════════════════════════════════════════════════ */
 table { border-collapse: collapse; width: 100%; }
 .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ══ BOTÃO VOLTAR AO TOPO ════════════════════════════════════════════════════ */
+.back-to-top {
+    position: fixed;
+    right: clamp(16px, 3vw, 32px);
+    bottom: clamp(16px, 3vw, 32px);
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-teal);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(11, 42, 64, .25);
+    z-index: 250;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: opacity .3s ease, transform .3s ease, visibility .3s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    background-color: var(--color-teal-light);
+    box-shadow: 0 10px 24px rgba(11, 42, 64, .32);
+}
+
+.back-to-top:active { transform: translateY(0) scale(.92); }
+
+@media (max-width: 479px) {
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+    }
+    .back-to-top svg { width: 18px; height: 18px; }
+}
