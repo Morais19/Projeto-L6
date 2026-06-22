@@ -1,15 +1,4 @@
-/* ── 1. Formulário: rótulo flutuante ─────────────────────────────────────── */
-const inputs = document.querySelectorAll(".input");
-
-function focusFunc() { this.parentNode.classList.add("focus"); }
-function blurFunc()  { if (this.value === "") this.parentNode.classList.remove("focus"); }
-
-inputs.forEach((input) => {
-    input.addEventListener("focus", focusFunc);
-    input.addEventListener("blur",  blurFunc);
-});
-
-/* ── 2. Revelação por rolagem dos cards ──────────────────────────────────── */
+/* ── 1. Revelação por rolagem dos cards ──────────────────────────────────── */
 const cards = document.querySelectorAll(".card_sobre");
 
 const revealObserver = new IntersectionObserver(
@@ -272,7 +261,34 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
     if (footerGrid) footerObserver.observe(footerGrid);
 })();
 
-/* ── 9. Botão "Voltar ao topo" ────────────────────────────────────────────── */
+/* ── 10. Contato: badge de disponibilidade dinâmico ──────────────────────── */
+(function initAvailBadge() {
+    const badge = document.getElementById('contato-avail-badge');
+    const replyMsg = document.getElementById('contato-reply-msg');
+    if (!badge || !replyMsg) return;
+
+    const now = new Date();
+    const day = now.getDay();   /* 0 = dom, 6 = sáb */
+    const hour = now.getHours();
+    const isOpen = day >= 1 && day <= 5 && hour >= 8 && hour < 18;
+
+    if (isOpen) {
+        badge.innerHTML =
+            '<div class="contato-avail online">' +
+                '<span class="avail-dot on" aria-hidden="true"></span>' +
+                'Online agora' +
+            '</div>';
+        replyMsg.textContent = 'Respondemos em até 1h';
+    } else {
+        const nextDay = (day === 0 || day === 6) ? 'segunda-feira' : 'amanhã';
+        badge.innerHTML =
+            '<div class="contato-avail offline">' +
+                '<span class="avail-dot off" aria-hidden="true"></span>' +
+                'Fora do horário' +
+            '</div>';
+        replyMsg.textContent = 'Respondemos ' + nextDay + ' a partir das 8h';
+    }
+})();
 (function initBackToTop() {
     const btn = document.getElementById('back-to-top');
     if (!btn) return;
