@@ -1553,6 +1553,20 @@ img {
     }
 }
  
+/* ══ MODAL DE PROJETOS ═══════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+    .modal-card {
+        grid-template-columns: 1fr !important;
+        max-height: 92vh;
+        overflow-y: auto;
+    }
+
+    #modal-media-wrap {
+        min-height: 220px !important;
+        max-height: 260px;
+    }
+}
+
 /* ══ UTILITÁRIOS ═════════════════════════════════════════════════════════════ */
 table { border-collapse: collapse; width: 100%; }
 .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
